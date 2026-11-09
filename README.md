@@ -6,6 +6,22 @@ Portfolio personnel moderne, responsive et haut de gamme conçu pour **Collé Sy
 
 ---
 
+## 🌐 Liens d'accès en ligne (Portfolio & Projets déployés)
+
+- **Portfolio principal** : [https://collesyll0607.github.io/](https://collesyll0607.github.io/) *(et [https://collesyll0607.github.io/portfolio-colle-syll/](https://collesyll0607.github.io/portfolio-colle-syll/))*
+
+| Projet | Lien d'accès à l'application déployée | Dépôt GitHub | Statut |
+| :--- | :--- | :--- | :--- |
+| **1. Pipeline Data Engineering – Analyse de données YouTube** | [https://collesyll0607.github.io/projet-4-youtube-streaming-analytics/](https://collesyll0607.github.io/projet-4-youtube-streaming-analytics/) | [Collesyll0607/projet-4-youtube-streaming-analytics](https://github.com/Collesyll0607/projet-4-youtube-streaming-analytics) | ✅ Déployé |
+| **2. Prédiction des prix de location immobilière – UASZ AI Community ($R^2 \approx 0,77$)** | [https://collesyll0607.github.io/prediction-loyers-ml/](https://collesyll0607.github.io/prediction-loyers-ml/) | [Collesyll0607/prediction-loyers-ml](https://github.com/Collesyll0607/prediction-loyers-ml) | ✅ Déployé |
+| **3. E-Dépôt – Plateforme de transport de marchandises en Casamance** | [https://collesyll0607.github.io/e-depot-plateforme/](https://collesyll0607.github.io/e-depot-plateforme/) | [Collesyll0607/e-depot-plateforme](https://github.com/Collesyll0607/e-depot-plateforme) | ✅ Déployé |
+| **4. Système Décisionnel & Data Warehouse – Gestion des Notes (`EduAnalytics`)** | [https://collesyll0607.github.io/projet-global-gestion-notes/](https://collesyll0607.github.io/projet-global-gestion-notes/) | [Collesyll0607/projet-global-gestion-notes](https://github.com/Collesyll0607/projet-global-gestion-notes) | ✅ Déployé |
+| **5. Application de gestion universitaire (Jakarta EE / N-tier)** | [https://collesyll0607.github.io/gestion-universitaire-jee/](https://collesyll0607.github.io/gestion-universitaire-jee/) | [Collesyll0607/gestion-universitaire-jee](https://github.com/Collesyll0607/gestion-universitaire-jee) | ✅ Déployé |
+| **6. Application Mobile & Microservices – Réservation de Visites Touristiques** | *En cours de développement (Mémoire L3 en binôme)* | [Collesyll0607/App_mobile_reservation_visites_touristiques](https://github.com/Collesyll0607/App_mobile_reservation_visites_touristiques) | ⏳ En cours |
+| **7. MamaCare IA – Santé Maternelle & Pédiatrie** | *En cours de développement (Projet d'équipe L3)* | [Branche `feature/vaccins-syll`](https://github.com/Mamadoulaminecissoko/Projet_Innovations_Technologiques/tree/feature/vaccins-syll) | ⏳ En cours |
+
+---
+
 ## Stack Technique
 
 - **Framework UI** : [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)

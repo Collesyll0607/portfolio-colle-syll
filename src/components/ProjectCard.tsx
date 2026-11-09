@@ -6,6 +6,7 @@ import {
   Clock,
   ExternalLink,
   Github,
+  Globe,
   Sparkles,
 } from 'lucide-react';
 import { PROFILE_DATA, ProjectItem } from '../data/portfolioData';
@@ -19,6 +20,7 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = false }) => {
   const [showDetails, setShowDetails] = useState(featured);
   const hasGithubLink = Boolean(project.githubUrl && project.githubUrl.trim().length > 0);
+  const hasLiveLink = Boolean(project.liveUrl && project.liveUrl.trim().length > 0);
 
   return (
     <article
@@ -35,6 +37,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-brand-secondary/60 text-brand-cream border border-brand-cream/15">
               {project.domainLabel}
             </span>
+            {hasLiveLink && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 hover:bg-emerald-500/30 transition-colors"
+                title="Ouvrir l'application déployée en ligne"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Application en ligne</span>
+                <ExternalLink className="w-2.5 h-2.5" />
+              </a>
+            )}
             {project.status === 'in-progress' && (
               <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-brand-orange/20 text-brand-orange border border-brand-orange/40">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-ping" />
@@ -62,7 +77,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
             {project.shortTag}
           </span>
           <h3 className="mt-1 text-xl font-extrabold text-brand-charcoal dark:text-brand-cream group-hover:text-brand-primary dark:group-hover:text-emerald-300 transition-colors">
-            {project.title}
+            {hasLiveLink ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline inline-flex items-center gap-1.5"
+              >
+                <span>{project.title}</span>
+              </a>
+            ) : (
+              project.title
+            )}
           </h3>
         </div>
 
@@ -119,8 +145,46 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
           </div>
         </div>
 
+        {/* Encadré affichant explicitement les liens d'accès (Démo + GitHub) */}
+        {(hasLiveLink || hasGithubLink) && (
+          <div className="mt-4 p-3 rounded-xl bg-brand-cream/70 dark:bg-brand-darkBg/60 border border-brand-primary/10 dark:border-brand-darkBorder space-y-1.5 text-xs font-mono">
+            {hasLiveLink && (
+              <div className="flex items-center gap-2 truncate">
+                <Globe className="w-3.5 h-3.5 text-brand-orange shrink-0" />
+                <span className="font-semibold text-brand-charcoal/70 dark:text-brand-cream/70 shrink-0">
+                  Lien d'accès :
+                </span>
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-primary dark:text-emerald-400 font-bold hover:underline truncate"
+                >
+                  {project.liveUrl}
+                </a>
+              </div>
+            )}
+            {hasGithubLink && (
+              <div className="flex items-center gap-2 truncate">
+                <Github className="w-3.5 h-3.5 text-brand-secondary dark:text-emerald-400 shrink-0" />
+                <span className="font-semibold text-brand-charcoal/70 dark:text-brand-cream/70 shrink-0">
+                  Dépôt GitHub :
+                </span>
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-charcoal/85 dark:text-brand-cream/85 hover:underline truncate"
+                >
+                  {project.githubUrl?.replace('https://', '')}
+                </a>
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Actions / Lien GitHub configurable + Lien Démo en ligne */}
-        <div className="mt-5 pt-3 flex flex-wrap items-center justify-between gap-3">
+        <div className="mt-4 pt-2 flex flex-wrap items-center justify-between gap-3">
           {hasGithubLink ? (
             <div className="flex flex-wrap items-center gap-2.5 w-full">
               {project.liveUrl && (
@@ -130,7 +194,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-orange text-brand-charcoal hover:bg-brand-orange/90 transition-colors shadow-sm"
                 >
-                  <span>Voir la démo en ligne</span>
+                  <Globe className="w-4 h-4" />
+                  <span>Ouvrir l'application déployée</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               )}
