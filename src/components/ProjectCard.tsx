@@ -119,19 +119,32 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
           </div>
         </div>
 
-        {/* Actions / Lien GitHub configurable */}
+        {/* Actions / Lien GitHub configurable + Lien Démo en ligne */}
         <div className="mt-5 pt-3 flex flex-wrap items-center justify-between gap-3">
           {hasGithubLink ? (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-primary text-brand-cream hover:bg-brand-secondary dark:bg-brand-secondary dark:hover:bg-brand-secondary/80 transition-colors"
-            >
-              <Github className="w-4 h-4" />
-              <span>Consulter le code source</span>
-              <ExternalLink className="w-3.5 h-3.5 opacity-80" />
-            </a>
+            <div className="flex flex-wrap items-center gap-2.5 w-full">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-orange text-brand-charcoal hover:bg-brand-orange/90 transition-colors shadow-sm"
+                >
+                  <span>Voir la démo en ligne</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-primary text-brand-cream hover:bg-brand-secondary dark:bg-brand-secondary dark:hover:bg-brand-secondary/80 transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                <span>Consulter le code source</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+            </div>
           ) : (
             <div className="flex flex-wrap items-center justify-between w-full gap-2">
               <span

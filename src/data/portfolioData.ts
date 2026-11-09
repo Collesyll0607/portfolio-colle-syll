@@ -465,6 +465,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     keyMetric: 'Streaming • Modèle Dimensionnel',
     architectureType: 'youtube-pipeline',
     githubUrl: 'https://github.com/Collesyll0607/projet-4-youtube-streaming-analytics',
+    liveUrl: 'https://collesyll0607.github.io/projet-4-youtube-streaming-analytics/',
   },
   {
     id: 'prediction-loyers-ml',
@@ -483,6 +484,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     keyMetric: 'Score R² ≈ 0,77 • UASZ AI',
     architectureType: 'ml-housing',
     githubUrl: 'https://github.com/Collesyll0607/prediction-loyers-ml',
+    liveUrl: 'https://collesyll0607.github.io/prediction-loyers-ml/',
   },
   {
     id: 'edepot-plateforme-transport',
@@ -501,6 +503,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     keyMetric: 'Logistique • Casamance',
     architectureType: 'edepot-microservices',
     githubUrl: 'https://github.com/Collesyll0607/e-depot-plateforme',
+    liveUrl: 'https://collesyll0607.github.io/e-depot-plateforme/',
   },
   {
     id: 'systeme-decisionnel-gestion-notes',
@@ -519,6 +522,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     keyMetric: 'Data Warehouse • SQL/NoSQL',
     architectureType: 'youtube-pipeline',
     githubUrl: 'https://github.com/Collesyll0607/projet-global-gestion-notes',
+    liveUrl: 'https://collesyll0607.github.io/projet-global-gestion-notes/',
   },
   {
     id: 'app-mobile-tourisme-uasz',
@@ -578,6 +582,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     keyMetric: 'Architecture 3 Couches',
     architectureType: 'university-3tier',
     githubUrl: 'https://github.com/Collesyll0607/gestion-universitaire-jee',
+    liveUrl: 'https://collesyll0607.github.io/gestion-universitaire-jee/',
   },
 ];
 
